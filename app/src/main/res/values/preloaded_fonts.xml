@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="preloaded_fonts" translatable="false">
+        <item>@font/annie_use_your_telescope</item>
+        <item>@font/architects_daughter</item>
+        <item>@font/cedarville_cursive</item>
+        <item>@font/cinzel</item>
+        <item>@font/cinzel_decorative</item>
+        <item>@font/waiting_for_the_sunrise</item>
+    </array>
+</resources>
