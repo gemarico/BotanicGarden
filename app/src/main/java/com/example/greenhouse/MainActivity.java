@@ -96,7 +96,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
             public void onClick(View v) {
                 IntentIntegrator integrator = new IntentIntegrator(activity);
                 integrator.setDesiredBarcodeFormats(IntentIntegrator.QR_CODE_TYPES);
-                integrator.setPrompt("Scan");
+                integrator.setPrompt("Scan the qr code next to the tree or plant");
                 integrator.setCameraId(0);
                 integrator.setBeepEnabled(false);
                 integrator.setBarcodeImageEnabled(false);
@@ -113,8 +113,8 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
             if (result.getContents() != null) {
                 handleScan(result.getContents());
 
-            }
-            else if (result.getContents() == null) {
+            } else if (result.getContents() == null) {
+
             }
         }
     }
@@ -134,6 +134,8 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
             video.setVideoURI(uri);
             video.requestFocus();
             video.start();
+        } else {
+            textViewResult.setText("The qr code is not valid. Try again.");
         }
     }
 
@@ -205,11 +207,11 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
             switch (contents) {
 
                 case "bellis perennis":
-                    return  getString(R.string.daisyday);
+                    return getString(R.string.daisyday);
                 case "acacia tortilis":
-                    return  getString(R.string.acaciaday);
+                    return getString(R.string.acaciaday);
                 case "pine tree":
-                    return  getString(R.string.pineday);
+                    return getString(R.string.pineday);
                 default:
                     return "";
 
@@ -218,11 +220,11 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
             switch (contents) {
 
                 case "bellis perennis":
-                    return  getString(R.string.daisynight);
+                    return getString(R.string.daisynight);
                 case "acacia tortilis":
-                    return  getString(R.string.acacianight);
+                    return getString(R.string.acacianight);
                 case "pine tree":
-                    return  getString(R.string.pinenight);
+                    return getString(R.string.pinenight);
                 default:
                     return "";
 
